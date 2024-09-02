@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+<link rel="stylesheet" href="{{ asset('css/register.css?2') }}">
 @endsection
 
 @section('content')
@@ -67,7 +67,7 @@
       </div>
     </div>
     <div class="form__button">
-      <button class="form__button-submit" type="submit">登録</button>
+      <button class="form__button-submit" type="submit">会員登録</button>
     </div>
   </form>
   <div class="login__link">
