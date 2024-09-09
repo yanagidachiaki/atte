@@ -18,7 +18,7 @@ class CreateWorksTable extends Migration
             $table->dateTime('start')->nullable(); // 開始時間、未設定可能
             $table->dateTime('stop')->nullable();  // 終了時間、未設定可能
             $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // ユーザーID
-            $table->timestamps(); // レコード作成・更新時刻の自動管理
+            $table->timestamps();
         });
     }
 

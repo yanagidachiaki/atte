@@ -9,11 +9,9 @@ class Rest extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'start',
-        'stop'
-    ];
+     public $timestamps = false;
 
+    protected $fillable = ['start', 'stop', 'total', 'user_id'];
     public function rests()
     {
         return $this->belongsTo(Work::class);
