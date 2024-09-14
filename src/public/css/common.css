@@ -1,7 +1,4 @@
-.header {
-    /* background: #000000; */
-    background: white;
-}
+
 
 .header__inner {
     margin: 0 auto;
@@ -23,18 +20,19 @@
 }
 
 .header-utilities nav {
-    width: 18%;
+    width: 40%;
 }
 
 .header-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    
 }
 
 .header__right-list{
     display: flex;
     width: 100%;
+    gap:60px;
 }
 
 

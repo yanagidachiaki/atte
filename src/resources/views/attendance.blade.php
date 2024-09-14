@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/index.css?') }}">
+    <link rel="stylesheet" href="{{ asset('css/attendance.css?1') }}">
 
 @section('content')
     
@@ -31,7 +31,7 @@
         <!-- 勤務終了 -->
         <td>{{ $work->stop ? \Carbon\Carbon::parse($work->stop)->format('H:i:s') : '' }}</td> <!-- 終了時刻がない場合は空白 -->
         <!-- 休憩時間 -->
-        <td>{{ sprintf('%02d:%02d:%02d', floor($work->total_rest_minutes / 60), $work->total_rest_minutes % 60, $work->total_rest_seconds % 60) }}</td>
+        <td>{{ sprintf('%02d:%02d:%02d', floor($work->total_rest_seconds / 3600), floor(($work->total_rest_seconds % 3600) / 60), $work->total_rest_seconds % 60) }}</td>
         <!-- 勤務時間 -->
         <td>{{ sprintf('%02d:%02d:%02d', floor($work->total_work_seconds / 3600), floor(($work->total_work_seconds % 3600) / 60), $work->total_work_seconds % 60) }}</td>  
        </tr>
@@ -41,8 +41,11 @@
         </table>
     </div>
     
-    <div class="pagination__wrap">
-        {{ $works->links() }}
+    <!-- Blade File (attendance.blade.php) -->
+<div class="pagination__wrap">
+    <div class="pagination pagination-lg justify-content-center">
+        {{ $works->links() }} <!-- Bootstrap Styled Pagination -->
     </div>
+</div>
    
 @endsection
